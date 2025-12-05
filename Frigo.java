@@ -8,14 +8,15 @@ public class Frigo {
 
         while (true) {
 
-
             try {
 
-                Pessoa cliente = new Pessoa();
                 System.out.println("Digite o nome: ");
-                cliente.nome = leitor.next();
+                String nomeDigitado = leitor.next();
+
                 System.out.println("Digite a idade: ");
-                cliente.idade = leitor.nextInt();
+                int idadeDigitada = leitor.nextInt();
+
+                Pessoa cliente = new Pessoa(nomeDigitado, idadeDigitada);
 
                 verification(cliente);
 
@@ -24,14 +25,14 @@ public class Frigo {
                 leitor.nextLine();
                 System.out.println("Escreva de forma númerica!");
             }
-
         }
+
     }
 
     public static void verification(Pessoa parametro) {
 
         if (parametro.eMaiorDeIdade()) {
-            System.out.println("Entra man,"+ parametro.nome);
+            System.out.println("Entra man," + parametro.nomeDigitado);
         } else {
             System.out.println("Vai catar coquin");
         }

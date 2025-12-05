@@ -1,9 +1,17 @@
 public class Pessoa {
-    String nome;
-    int idade;
+    String nomeDigitado;
+    int idadeDigitada;
+    
+
+    //Construtor;;
+    public Pessoa(String nome, int idade) {
+        this.nomeDigitado = nome;
+        this.idadeDigitada = idade;
+    }
+    //;;
 
     public boolean eMaiorDeIdade() {
-        if(idade >=18) {
+        if(idadeDigitada >=18) {
             return true;
         
         } else {

@@ -13,11 +13,8 @@ public class Frigo {
 
                 int idade = leitor.nextInt();
 
-                if (idade >= 18) {
-                    System.out.println("Entra man");
-                } else {
-                    System.out.println("Vai catar coquin");
-                }
+                verification(idade);
+
             } catch (InputMismatchException e) {
 
                 leitor.nextLine();
@@ -26,4 +23,13 @@ public class Frigo {
 
         }
     }
-} 
+
+    public static void verification(int idade) {
+
+        if (idade >= 18) {
+            System.out.println("Entra man");
+        } else {
+            System.out.println("Vai catar coquin");
+        }
+    }
+}

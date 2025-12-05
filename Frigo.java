@@ -3,17 +3,21 @@ import java.util.InputMismatchException;
 
 public class Frigo {
     public static void main(String[] args) {
+
         Scanner leitor = new Scanner(System.in);
 
         while (true) {
 
-            System.out.println("Digite sua idade: ");
 
             try {
 
-                int idade = leitor.nextInt();
+                Pessoa cliente = new Pessoa();
+                System.out.println("Digite o nome: ");
+                cliente.nome = leitor.next();
+                System.out.println("Digite a idade: ");
+                cliente.idade = leitor.nextInt();
 
-                verification(idade);
+                verification(cliente);
 
             } catch (InputMismatchException e) {
 
@@ -24,10 +28,10 @@ public class Frigo {
         }
     }
 
-    public static void verification(int idade) {
+    public static void verification(Pessoa parametro) {
 
-        if (idade >= 18) {
-            System.out.println("Entra man");
+        if (parametro.eMaiorDeIdade()) {
+            System.out.println("Entra man,"+ parametro.nome);
         } else {
             System.out.println("Vai catar coquin");
         }

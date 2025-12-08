@@ -1,7 +1,22 @@
 public class Pessoa {
-    String nomeDigitado;
-    int idadeDigitada;
-    
+    private String nomeDigitado;
+    private int idadeDigitada;
+
+    public String getNomeDigitado() {
+        return nomeDigitado;
+    }
+
+    public void setNomeDigitado(String nomeDigitado) {
+        this.nomeDigitado = nomeDigitado;
+    }
+
+    public int getIdadeDigitada() {
+        return idadeDigitada;
+    }
+
+    public void setIdadeDigitada(int idadeDigitada) {
+        this.idadeDigitada = idadeDigitada;
+    }
 
     //Construtor;;
     public Pessoa(String nome, int idade) {

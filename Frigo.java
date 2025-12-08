@@ -9,6 +9,7 @@ public class Frigo {
         while (true) {
 
             try {
+                
 
                 System.out.println("Digite o nome: ");
                 String nomeDigitado = leitor.next();
@@ -32,7 +33,7 @@ public class Frigo {
     public static void verification(Pessoa parametro) {
 
         if (parametro.eMaiorDeIdade()) {
-            System.out.println("Entra man," + parametro.nomeDigitado);
+            System.out.println("Entra man," + parametro.getNomeDigitado());
         } else {
             System.out.println("Vai catar coquin");
         }

@@ -1,1 +1,1 @@
- Pessoa cliente = new Pessoa(nomeDigitado, idadeDigitada);
+ Person cliente = new Person(nomeDigitado, idadeDigitada);

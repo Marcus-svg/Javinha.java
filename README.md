@@ -1,17 +1,24 @@
-# Sistema de Controle de Acesso (Java)
+# Access Control System (Java)
 
-Um sistema simples de gerenciamento de portaria baseado em console, desenvolvido como parte dos estudos em Engenharia de Software. O projeto aplica conceitos fundamentais de Orientação a Objetos e estruturas de dados em Java.
+A console-based access control management system developed as part of Software Engineering studies. 
+**Note:** Source code is written in English (clean code standards), while the User Interface (CLI) is localized in Portuguese (PT-BR).
 
-##  Funcionalidades
+## 📋 Funcionalidades (Features)
 
-- **Cadastro de Convidados:** Entrada de nome e idade via console.
-- **Validação de Regras de Negócio:** Restrição automática para menores de 18 anos.
-- **Tratamento de Exceções:** Sistema robusto contra erros de tipo (ex: inserção de texto em campo numérico).
-- **Persistência em Memória:** Utilização de `ArrayList` para armazenar o histórico de entradas autorizadas.
-- **Relatório Final:** Geração de listagem completa ao encerrar a execução.
+- **Cadastro:** Entrada de nome e idade via console.
+- **Validação:** Restrição automática para menores de 18 anos.
+- **Tratamento de Erros:** Sistema robusto contra erros de digitação (ex: texto em campo numérico).
+- **Persistência:** Uso de `ArrayList` para histórico de entradas.
+- **Relatório:** Listagem completa ao encerrar o programa.
 
-##  Tecnologias Utilizadas
+## 🛠 Tech Stack
 
-- **Linguagem:** Java
-- **Conceitos:** POO (Encapsulamento, Construtores), Collections, Exception Handling.
-- **IDE:** VS Code
+- **Language:** Java (JDK 8+)
+- **Concepts:** OOP (Encapsulation, Constructors), Collections, Exception Handling.
+
+## 🚀 Como Executar (How to Run)
+
+1. Clone o repositório.
+2. Compile os arquivos:
+  
+   javac AccessControlSystem.java Person.java

@@ -16,12 +16,17 @@ public class Frigo {
                 System.out.println("Digite o nome: ");
                 String nomeDigitado = leitor.next();
 
+                if (nomeDigitado.equals("fim")) {
+                    System.out.println("Acabou o espaço.");
+                    break;
+                }
+
                 System.out.println("Digite a idade: ");
                 int idadeDigitada = leitor.nextInt();
 
                 Pessoa cliente = new Pessoa(nomeDigitado, idadeDigitada);
-                if(cliente.eMaiorDeIdade()) {
-                
+                if (cliente.eMaiorDeIdade()) {
+
                     listaDeClientes.add(cliente);
                 }
 
@@ -34,6 +39,12 @@ public class Frigo {
                 leitor.nextLine();
                 System.out.println("Escreva de forma númerica!");
             }
+        }
+
+        System.out.println("\n--- LISTA DE ENTRADA ---");
+
+        for (Pessoa pessoaDentro : listaDeClientes) {
+            System.out.println("Convidado: " + pessoaDentro.getNomeDigitado());
         }
 
     }

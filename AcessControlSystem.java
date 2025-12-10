@@ -6,14 +6,7 @@ public class AcessControlSystem {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         ArrayList<Person> guestList = new ArrayList<>();
-
-        Employee cleaner = new Employee("João da Silva", 45, "F-001");
-
-        System.out.println("Teste Funcionário: " + cleaner.getName());
-        System.out.println("Crachá: " + cleaner.getBadgeId());
-        System.out.println("-------------------------------");
 
         System.out.println("    Iniciando acesso ao sistema de controle de entrada   ");
         System.out.println("   Para sair e gerar o relatório final digite 'fim'   ");
@@ -22,50 +15,65 @@ public class AcessControlSystem {
 
             try {
 
+                System.out.println("----------------------------");
+                System.out.println("Quem voçê deseja cadastrar?");
+                System.out.println("1 - Convidado comum");
+                System.out.println("2 - Funcionário");
+                System.out.println("Opção: ");
+                
+                String option = scanner.next();
+
+                if (option.equalsIgnoreCase("fim")) break;
+
                 System.out.println("Digite o nome: ");
                 String nameInput = scanner.next();
-
-                if (nameInput.equalsIgnoreCase("fim")) {
-                    System.out.println("Acabou o espaço.");
-                    break;
-                }
+                if (option.equalsIgnoreCase("fim")) break;
 
                 System.out.println("Digite a idade: ");
                 int ageInput = scanner.nextInt();
 
-                Person guest = new Person(nameInput, ageInput);
-                if (guest.isOfLegalAge()) {
+                Person person;
 
-                    guestList.add(guest);
+                if (option.equals("2")) {
+
+                    System.out.println("Digite o ID do crachá: ");
+                    String badgeInput = scanner.next();
+
+                    person = new Employee(nameInput, ageInput, badgeInput);
+                } else {
+
+                    person = new Person (nameInput, ageInput);
                 }
 
-                System.out.println("Total de pessoas na festa: " + guestList.size());
+                processEntry(person, guestList);
+                
+                } catch (InputMismatchException e) {
+                    System.out.println("Erro: Digite apenas números nos campos numéricos.");
+                    scanner.nextLine();
+                }
+            }
 
-                verification(guest);
+            generateFinalReport(guestList);
+            scanner.close();
+        }
 
-            } catch (InputMismatchException e) {
-
-                scanner.nextLine();
-                System.out.println("Escreva de forma númerica!");
+        public static void processEntry(Person p, ArrayList<Person> list) {
+            if (p.isOfLegalAge()) {
+                list.add(p);
+                System.out.println("[SUCESSO] Entrada autorizada: " + p.getName());
+            } else {
+                System.out.println("[NEGADO] Menor de idade.");
             }
         }
 
-        System.out.println("\n--- LISTA DE ENTRADA ---");
+        public static void generateFinalReport(ArrayList<Person> list) {
+            System.out.println("\n================================");
+            System.out.println("   RELATÓRIO FINAL   ");
+            System.out.println("================================");
 
-        for (Person personInside : guestList) {
-            System.out.println("Convidado: " + personInside.getName());
+            for (Person p : list) {
+                System.out.println("- Nome" + p.getName() + " | Idade: " + p.getAge());
+            }
+            System.out.println("=============================");
         }
-
-    }
-
-    public static void verification(Person parameter) {
-
-        if (parameter.isOfLegalAge()) {
-            System.out.println("Acesso permitido para: " + parameter.getName());
-            System.out.println("(Maior de idade)");
-        } else {
-            System.out.println("Acesso negado para: "+ parameter.getName());
-            System.out.println("(Menor de idade)");
-        }
-    }
 }

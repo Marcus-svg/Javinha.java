@@ -1,1 +1,0 @@
- Person cliente = new Person(nomeDigitado, idadeDigitada);

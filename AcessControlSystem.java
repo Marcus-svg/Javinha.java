@@ -9,6 +9,12 @@ public class AcessControlSystem {
 
         ArrayList<Person> guestList = new ArrayList<>();
 
+        Employee cleaner = new Employee("João da Silva", 45, "F-001");
+
+        System.out.println("Teste Funcionário: " + cleaner.getName());
+        System.out.println("Crachá: " + cleaner.getBadgeId());
+        System.out.println("-------------------------------");
+
         System.out.println("    Iniciando acesso ao sistema de controle de entrada   ");
         System.out.println("   Para sair e gerar o relatório final digite 'fim'   ");
 

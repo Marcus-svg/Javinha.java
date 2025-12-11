@@ -21,12 +21,12 @@ public class Person {
         this.age = age;
     }
 
-    //Construtor;;
+    // Construtor;;
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
-    //;;
+    // ;;
 
     public boolean isOfLegalAge() {
         
@@ -36,5 +36,9 @@ public class Person {
         } else {
             return false;
         }
+    }
+     @Override
+    public String toString() {
+        return " Nome: " + this.name + " Idade: " + this.age;
     }
 }

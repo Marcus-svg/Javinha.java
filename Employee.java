@@ -12,4 +12,11 @@ public class Employee extends Person {
     public String getBadgeId() {
         return badgeId;
     }
+    @Override
+    public String toString() {
+
+        String textBase = super.toString();
+
+        return textBase + " | Crachá: " + this.badgeId;
+    }
 }

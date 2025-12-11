@@ -56,7 +56,6 @@ public class AcessControlSystem {
             generateFinalReport(guestList);
             scanner.close();
         }
-
         public static void processEntry(Person p, ArrayList<Person> list) {
             if (p.isOfLegalAge()) {
                 list.add(p);
@@ -71,9 +70,15 @@ public class AcessControlSystem {
             System.out.println("   RELATÓRIO FINAL   ");
             System.out.println("================================");
 
-            for (Person p : list) {
-                System.out.println("- Nome" + p.getName() + " | Idade: " + p.getAge());
+            if (list.isEmpty()) {
+                System.out.println("Sem convidado registrado");
+            } else {
+                for (Person p : list) {
+
+                System.out.println(p.toString());
             }
-            System.out.println("=============================");
         }
-}
+        System.out.println("================================");
+    }    
+    
+}    

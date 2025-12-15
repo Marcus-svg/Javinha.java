@@ -3,9 +3,11 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 
 public class AcessControlSystem {
+    
     public static void main(String[] args) {
+        
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "Cp850");
         ArrayList<Person> guestList = new ArrayList<>();
 
         System.out.println("    Iniciando acesso ao sistema de controle de entrada   ");

@@ -42,7 +42,7 @@ public class AcessControlSystem {
                     person = new Employee(nameInput, ageInput, badgeInput);
                 } else {
 
-                    person = new Person (nameInput, ageInput);
+                    person = new Guest(nameInput, ageInput);
                 }
 
                 processEntry(person, guestList);
@@ -79,6 +79,5 @@ public class AcessControlSystem {
             }
         }
         System.out.println("================================");
-    }    
-    
-}    
+    }
+}

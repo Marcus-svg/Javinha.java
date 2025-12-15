@@ -6,7 +6,6 @@ public class AcessControlSystem {
     
     public static void main(String[] args) {
         
-
         Scanner scanner = new Scanner(System.in, "Cp850");
         ArrayList<Person> guestList = new ArrayList<>();
 
@@ -56,6 +55,10 @@ public class AcessControlSystem {
             }
 
             generateFinalReport(guestList);
+
+            System.out.println("Salvando dados...");
+            FileManager.saveToFile(guestList);
+            
             scanner.close();
         }
         public static void processEntry(Person p, ArrayList<Person> list) {

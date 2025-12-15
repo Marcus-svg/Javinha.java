@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class FileManager {
 
-    private static final String FILENAME = "Banco_de_dados.txt";
+    private static final String FILENAME = "Save_data.txt";
 
     public static void saveToFile(ArrayList<Person> list) {
 
